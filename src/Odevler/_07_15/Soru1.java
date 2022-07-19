@@ -1,4 +1,4 @@
-package Odevler;
+package Odevler._07_15;
 import Utils.BaseStaticDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

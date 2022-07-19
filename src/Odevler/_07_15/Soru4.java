@@ -1,4 +1,4 @@
-package Odevler;
+package Odevler._07_15;
 
 import Utils.BaseStaticDriver;
 import org.openqa.selenium.By;
@@ -13,6 +13,7 @@ public class Soru4 extends BaseStaticDriver {
         Calculate button'una tıklayınız.
         Sonucu alınız.
         Sonucu yazdırınız.*/
+
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement element=driver.findElement(By.id("calculate"));        element.click();
         WebElement element1=driver.findElement(By.id("number1"));         element1.sendKeys("12");
