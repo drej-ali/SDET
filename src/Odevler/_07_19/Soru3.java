@@ -1,40 +1,31 @@
 package Odevler._07_19;
 
 import Utils.BaseStaticDriver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class Soru3 extends BaseStaticDriver {
     public static void main(String[] args) {
-        /*1) Bu siteye gidin. -> https://www.snapdeal.com/
-          2) "teddy bear" aratın ve                                         .header_wrapper [name='keyword']
-          3)Search butonuna tıklayın.                                  [class='searchformButton col-xs-4 rippleGrey']
-          4) Bu yazının göründüğünü doğrulayınız. -> (We've got 297 results for 'teddy bear')   #searchMessageContainer span
+/*        1) Bu siteye gidin. -> https://www.snapdeal.com/
+          2) "teddy bear" aratın ve                 //*[@name='keyword' and @placeholder='Search products & brands']
+          3)Search butonuna tıklayın.                  //span[@class='searchTextSpan']
+          4) Bu yazının göründüğünü doğrulayınız. -> (We've got 297 results for 'teddy bear')   //span[@class='nnn'][1]
           Not: Bu yazıdaki sayı değişiklik gösterebilir. Önemli olan cümle kalıbı.*/
-
         driver.get("https://www.snapdeal.com/");
 
-        WebElement text=driver.findElement(By.cssSelector(".header_wrapper [name='keyword']"));
+        WebElement text=driver.findElement(By.xpath("//*[@name='keyword' and @placeholder='Search products & brands']"));
         text.sendKeys("teddy bear");
         Bekle(2);
-        WebElement search = driver.findElement(By.cssSelector("[class='searchformButton col-xs-4 rippleGrey']"));
+        WebElement search = driver.findElement(By.xpath("//span[@class='searchTextSpan']"));
         search.click();
         Bekle(2);
-        WebElement display=driver.findElement(By.cssSelector("#searchMessageContainer span"));
-        display.click();
+        WebElement display=driver.findElement(By.xpath("//span[@class='nnn'][1]"));
         Bekle(2);
 
-        if (display.getText().contains("We've got 296 results for 'teddy bear'"))
-            System.out.println("Test passed.");
-        else System.out.println("Test failed ! ...");
+        Assert.assertTrue(display.getText().contains("We've got 290 results for 'teddy bear'"));
+
 
         BekleKapat();
-
-
-
-
-
-
-
     }
 }

@@ -1,3 +1,9 @@
+Buradaki ödevler de elemanların LOCATOR larını bulurken,
+
+elemanın kendisindeki id veya name i kullanmadan (diğerlerindekini kullanabilirsiz bu eleman ulaşmak için)
+
+ve sadece CSS Selector ile bularak çözünüz.
+
 1-
 
 /*
@@ -43,7 +49,6 @@ Not: Bu yazıdaki sayı değişiklik gösterebilir. Önemli olan cümle kalıbı
 
 
 4-
-
 Bu websitesine gidiniz.  [https://testpages.herokuapp.com/styled/index.html]
 
 Calculate'e tıklayınız.
@@ -57,3 +62,6 @@ Calculate button'una tıklayınız.
 Sonucu alınız.
 
 Sonucu yazdırınız.
+
+
+

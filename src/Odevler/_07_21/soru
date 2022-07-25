@@ -1,0 +1,34 @@
+        1. Navigate to http://a.testaddressbook.com/sign_in
+        2. Enter the username and password  //input[@name='user[email]']  //input[@name='user[password]']
+        3. Click on sign in button      //input[@name='commit']
+        4. Click on Addresses       //a[@data-test='addresses']
+        5. Click on new address button  //a[@data-test='create']
+        6. Enter the first name "Fernando"   id  address_first_name
+        7. Enter the last name "Torres"     id address_last_name
+        8. Enter the address 1 "Anfield Rd"     id address_street_address
+        9. Enter the address 2 "Anfield"    id address_secondary_address
+        10. Enter the city "Liverpool"      id address_city
+        11. Choose a RANDOM option from the state dropdown  id address_state
+        12. Enter the Zipcode "L4 0TH"  id  address[zip_code]
+        13. Click on United States      id address_country_us
+        14. Enter the birthday "03/20/1984"   id  address_birthday
+        15. Enter the age "36"          address_age
+        16. Enter the WebSite "https://www.google.com/"     address_website
+        17. Enter the phone "8625747878"        address_phone
+        18. Click on Climbing and Dancing   address_interest_climb  address_interest_dance
+        19. Enter the Note "Never Back Down"        address_note
+        20. Click on Create Address button      //input[@value='Create Address']
+        21. Verify if the first name is "Fernando"      //span[@data-test='first_name']
+        22. Verify if the last name is "Torres"         //span[@data-test="last_name"]
+        23. Click on Addresses                      //a[@data-test='addresses']
+        24. Click on Edit button                    //a[text()='Edit']
+        25. Change the first name as "Peter"        address_first_name
+        26. Change the last name as "Crouch"        address_last_name
+        27. Click on Update address             //input[@value='Update Address']
+        28. Verify if the first name is "Peter"         //span[@data-test='first_name']
+        29. Verify if the last name is "Crouch"             //span[@data-test="last_name"]
+        30. Click on Addresses                      //a[@data-test='addresses']
+        31. Click on Destroy                        //a[text()='Destroy']
+        32. Confirm deleting the address            switch
+        33. Verify if the address was removed       [data-test='notice'
+        34. Quit the browser*/

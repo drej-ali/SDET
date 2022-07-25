@@ -6,37 +6,41 @@ import org.openqa.selenium.WebElement;
 
 public class Soru4 extends BaseStaticDriver {
     public static void main(String[] args) {
-      /*Bu websitesine gidiniz.  [https://testpages.herokuapp.com/styled/index.html]
-        Calculate'e tıklayınız.                                 .page-body #calculate
-        İlk input'a herhangi bir sayı giriniz.                  [action='calculate.php']>input
-        İkinci input'a herhangi bir sayı giriniz.               #function+input
-        Calculate button'una tıklayınız.                        #function~#calculate
-        Sonucu alınız.                                          [action='calculate.php']+ #answer
-        Sonucu yazdırınız.*/
+/*        Bu websitesine gidiniz.  [https://testpages.herokuapp.com/styled/index.html]
+          Calculate'e tıklayınız.                           //a[@id='calculate']
+          İlk input'a herhangi bir sayı giriniz.            //input[@name='number1']
+          İkinci input'a herhangi bir sayı giriniz.         //input[@name][2]
+          Calculate button'una tıklayınız.                  //input[@value='Calculate']
+          Sonucu alınız.                                    //span
+          Sonucu yazdırınız.*/
         driver.get("https://testpages.herokuapp.com/styled/index.html");
 
-        WebElement calculate=driver.findElement(By.cssSelector(".page-body #calculate"));
+        WebElement calculate=driver.findElement(By.xpath("//a[@id='calculate']"));
         calculate.click();
         Bekle(2);
 
-        WebElement text1=driver.findElement(By.cssSelector("[action='calculate.php']>input"));
+        WebElement text1=driver.findElement(By.xpath("//input[@name='number1']"));
         text1.sendKeys("10");
         Bekle(2);
 
-        WebElement text2=driver.findElement(By.cssSelector("#function+input"));
+        WebElement text2=driver.findElement(By.xpath("//input[@name][2]"));
         text2.sendKeys("25");
         Bekle(2);
 
-        WebElement button=driver.findElement(By.cssSelector("#function~#calculate"));
+        WebElement button=driver.findElement(By.xpath("//input[@value='Calculate']"));
         button.click();
         Bekle(2);
 
-        WebElement answer=driver.findElement(By.cssSelector("[action='calculate.php']+ #answer"));
+        WebElement answer=driver.findElement(By.xpath("//span"));
 
-        System.out.println("Sonuç="+answer.getText()+"Test passed.:)");
+        System.out.println("Sonuç="+answer.getText()+" Test passed.:)");
+
+
+
+
+
 
         BekleKapat();
-
 
     }
 }
