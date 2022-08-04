@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class soru1 extends BaseStaticDriver{
+public class soru1 extends BaseStaticDriver {
     public static void main(String[] args) {
         driver.get("https://shopdemo.e-junkie.com/");
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement eBook = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[onclick*='1595015']")));
         eBook.click();
         driver.switchTo().frame(5);
@@ -25,6 +25,7 @@ public class soru1 extends BaseStaticDriver{
         driver.switchTo().defaultContent();
         WebElement sepetBos =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cart_item_nos")));
         Assert.assertTrue(sepetBos.getText().equals("0"));
+
         BekleKapat();
     }
 }

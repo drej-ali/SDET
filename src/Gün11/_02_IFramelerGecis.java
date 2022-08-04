@@ -25,7 +25,12 @@ public class _02_IFramelerGecis extends BaseStaticDriver {
         BekleKapat();
     }
 }
-//        frame 0
+//        frame 5
+//                asdasd
 //            >subframe 0
 //            >subframe 1
+//            >subframe 2
+//                      adsfasgf
+//            >subframe 3
+//            >subframe 4
 //        frame 1

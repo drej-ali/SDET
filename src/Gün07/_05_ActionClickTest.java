@@ -17,7 +17,6 @@ public class _05_ActionClickTest extends BaseStaticDriver {
         Bekle(2);
         Action aksiyon= aksiyonlar.moveToElement(element).click().build(); //elemnt in üzerine git CLICK ı hazırla
         System.out.println("Aksiyon hazırlandı.");
-
         Bekle(2);
         aksiyon.perform(); // aksiyonu gerçekleştir
         System.out.println("Aksiyon gerceklesti.");

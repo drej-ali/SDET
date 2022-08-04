@@ -18,7 +18,8 @@ public class Soru1 extends BaseStaticDriver {
             for (int j = 1; j < 16; j++) {
                 WebElement hedef = driver.findElement(By.id("q" + j));
                 Actions aksiyonlar = new Actions(driver);
-                aksiyonlar.clickAndHold(sehir).moveToElement(hedef).release(hedef).build().perform();
+                Action aksiyon= aksiyonlar.clickAndHold(sehir).moveToElement(hedef).release().build();
+                aksiyon.perform();
                 if (sehir.getCssValue("background-color").equalsIgnoreCase("rgba(0, 128, 0, 1)"))
                     break;
             }

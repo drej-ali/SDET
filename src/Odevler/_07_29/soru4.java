@@ -30,21 +30,10 @@ public class soru4 extends BaseStaticDriver {
         phone.sendKeys("+905558115659");
         WebElement adres=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Company']//following-sibling::input")));
         adres.sendKeys("Hatay/Antakya");
-        rbt.keyPress(KeyEvent.VK_TAB); rbt.keyRelease(KeyEvent.VK_TAB);
-        Bekle(1);
-        for (int i = 0; i < 8; i++) {
-            rbt.keyPress(KeyEvent.VK_4); rbt.keyRelease(KeyEvent.VK_4);
-            rbt.keyPress(KeyEvent.VK_2); rbt.keyRelease(KeyEvent.VK_2);
-        }
-        rbt.keyPress(KeyEvent.VK_1); rbt.keyRelease(KeyEvent.VK_1);
-        for (int i = 0; i < 3; i++) {
-            rbt.keyPress(KeyEvent.VK_2);
-            rbt.keyRelease(KeyEvent.VK_2);
-        }
-        for (int i = 0; i < 3; i++) {
-            rbt.keyPress(KeyEvent.VK_0);
-            rbt.keyRelease(KeyEvent.VK_0);
-        }
+        driver.switchTo().frame(2);
+        WebElement cardNo=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Kart numarası']")));
+        cardNo.sendKeys("42424242424242421222000");
+        driver.switchTo().parentFrame();
         WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='Pay-Button']")));
         button.click();
         Bekle(10);
